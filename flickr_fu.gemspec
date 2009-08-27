@@ -81,7 +81,7 @@ Gem::Specification.new do |s|
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/commonthread/flickr_fu}
+  s.homepage = %q{http://github.com/ayn/flickr_fu}
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
