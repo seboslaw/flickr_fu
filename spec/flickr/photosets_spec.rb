@@ -45,5 +45,10 @@ describe Flickr::Photosets do
       photos.should_not be_nil
       photos[0].should be_an_instance_of(Flickr::Photos::Photo)    
     end
+    
+    it "should return the correct primary photo url" do
+      @flickr.stub!(:request_over_http).and_return(@get_list_xml)
+      @flickr.photosets.get_list[0].primary_photo_url.should == 'http://farm1.static.flickr.com/8/2483_abcdef_s.jpg'
+    end
   end
 end
