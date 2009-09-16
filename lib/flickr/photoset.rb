@@ -35,10 +35,11 @@ class Flickr::Photosets::Photoset
   def create_attributes(photo)
     {
       :id     => photo[:id],
-      :secret => photo[:secret], 
-      :server => photo[:server], 
+      :secret => photo[:secret],
+      :server => photo[:server],
       :farm   => photo[:farm],
-      :title  => photo[:title]
+      :title  => photo[:title],
+      :url_l  => photo[:url_l]
     }
   end
 end

@@ -115,7 +115,7 @@ class Flickr::Photos < Flickr::Base
   #     The type of media to search for. 'photo', 'video', or 'both' are allowed arguments, with 'both' being the default.
   # 
   def search(options)
-    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media"})
+    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media,url_l"})
 
     rsp = @flickr.send_request('flickr.photos.search', options)
 
@@ -149,7 +149,7 @@ class Flickr::Photos < Flickr::Base
   #     The type of media to search for. 'photo', 'video', or 'both' are allowed arguments, with 'both' being the default.
   # 
   def get_recent(options = {})
-    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media"})
+    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media,url_l"})
 
     rsp = @flickr.send_request('flickr.photos.getRecent', options)
 
@@ -169,7 +169,7 @@ class Flickr::Photos < Flickr::Base
   end
   
   def interesting(options)
-    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media"})
+    options.merge!({:extras => "license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,machine_tags,o_dims,views,media,url_l"})
 
     rsp = @flickr.send_request('flickr.interestingness.getList', options)
 
@@ -240,7 +240,8 @@ class Flickr::Photos < Flickr::Base
      :machine_tags => photo[:machine_tags],
      :o_dims => photo[:o_dims],
      :views => photo[:views].to_i,
-     :media => photo[:media]}
+     :media => photo[:media],
+     :url_l => photo[:url_l]}
   end
   
 end
