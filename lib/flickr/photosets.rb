@@ -37,7 +37,8 @@ class Flickr::Photosets < Flickr::Base
       :farm        => photoset[:farm],
       :server      => photoset[:server],
       :title       => photoset.title.to_s,
-      :description => photoset.description.to_s
+      :description => photoset.description.to_s,
+      :owner       => photoset[:owner]
      }
   end
   

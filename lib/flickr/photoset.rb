@@ -1,5 +1,5 @@
 class Flickr::Photosets::Photoset
-  attr_accessor :id, :num_photos, :primary, :secret, :farm, :server, :title, :description
+  attr_accessor :id, :num_photos, :primary, :secret, :farm, :server, :title, :description, :owner
 
   def initialize(flickr, attributes)
     @flickr = flickr
@@ -39,7 +39,8 @@ class Flickr::Photosets::Photoset
       :server => photo[:server],
       :farm   => photo[:farm],
       :title  => photo[:title],
-      :url_l  => photo[:url_l]
+      :url_l  => photo[:url_l],
+      :owner  => self.owner
     }
   end
 end
