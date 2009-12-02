@@ -34,4 +34,16 @@ class Flickr::Photos::PhotoResponse
   def method_missing(method, *args, &block)
     self.photos.respond_to?(method) ? self.photos.send(method, *args, &block) : super
   end
+
+  # Want this to work with will_paginate helper. Modeled from http://github.com/railsguy/flickr_fu/commit/fa2dcd30e4b21e76953ab31d6ae69815814700db
+
+  # Total pages returned
+  def total_pages
+    self.total / self.per_page
+  end
+
+  # Alias page
+  def current_page
+    self.page
+  end
 end
