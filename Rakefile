@@ -12,8 +12,8 @@ begin
   Jeweler::Tasks.new do |s|
     s.name = "flickr_fu"
     s.summary = "Provides a ruby interface to flickr via the REST api"
-    s.email = "ayn@andrewng.com"
-    s.homepage = "http://github.com/ayn/flickr_fu"
+    s.email = "petkanics@gmail.com"
+    s.homepage = "http://github.com/dob/flickr_fu"
     s.description = "Provides a ruby interface to flickr via the REST api"
     s.authors = ["Ben Wyrosdick", "Maciej Bilas"]
     s.rdoc_options = ["--main", "README"]
