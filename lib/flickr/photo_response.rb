@@ -39,11 +39,16 @@ class Flickr::Photos::PhotoResponse
 
   # Total pages returned
   def total_pages
-    self.total / self.per_page
+    self.pages
   end
 
   # Alias page
   def current_page
     self.page
+  end
+
+  # Alias total
+  def total_entries
+    self.total
   end
 end
